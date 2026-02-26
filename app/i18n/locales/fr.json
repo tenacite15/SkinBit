@@ -1,0 +1,38 @@
+{
+  "home": {
+    "title": "Mes patients"
+  },
+  "patientFile": {
+    "diagnostics": "Les diagnostics",
+    "back": "Retour"
+  },
+  "patientList": {
+    "age": "Âge :",
+    "condition": "Condition :",
+    "lastVisit": "Dernière visite :",
+    "seeFile": "Voir le dossier"
+  },
+  "patientInfos": {
+    "age": "Âge",
+    "condition": "Condition",
+    "lastVisit": "Dernière visite"
+  },
+  "diagnostics": {
+    "zone": "ZONE",
+    "evolution": "EVOLUTION",
+    "risk": "RISQUE",
+    "note": "Note :",
+    "noNote": "Aucune note."
+  },
+  "modal": {
+    "placeholder": "Entrez une note...",
+    "cancel": "Annuler",
+    "ok": "OK",
+    "validate": "Valider",
+    "instruction": "Cliquez sur la zone voulue pour ajouter une note",
+    "closeLabel": "Fermer la modal"
+  },
+  "navigation": {
+    "patientFile": "Dossier patient"
+  }
+}
