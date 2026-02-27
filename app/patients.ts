@@ -1,6 +1,7 @@
 import type { Patient } from "./store/types";
 import grain2 from "../assets/images/grain2.jpg";
 import grain3 from "../assets/images/grain3.jpg";
+import grain1 from "../assets/images/grain1.jpg";
 import grain4 from "../assets/images/imageSkin.jpg";
 
 export const patients: Patient[] = [
@@ -17,7 +18,7 @@ export const patients: Patient[] = [
         notes: "",
         img: grain4,
         annotations: [],
-        zone: "Dos",
+        zone: "Joue",
         evolution: "stable",
         risque: "low",
       },
@@ -25,9 +26,9 @@ export const patients: Patient[] = [
         date: "2024-01-15",
         condition: "psoriasis",
         notes: "",
-        img: grain4,
+        img: grain3,
         annotations: [],
-        zone: "Dos",
+        zone: "Joue",
         evolution: "decrease",
         risque: "high",
       },
@@ -54,7 +55,7 @@ export const patients: Patient[] = [
         date: "2024-01-15",
         condition: "Eczema",
         notes: "",
-        img: grain2,
+        img: grain1,
         annotations: [],
         zone: "Dos",
         evolution: "stable",
@@ -73,7 +74,7 @@ export const patients: Patient[] = [
         date: "2024-05-01",
         condition: "Eczema",
         notes: "",
-        img: grain3,
+        img: grain1,
         annotations: [],
         zone: "Dos",
         evolution: "stable",
