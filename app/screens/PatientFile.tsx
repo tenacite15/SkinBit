@@ -45,7 +45,11 @@ function PatientFileScreen({ route, navigation }: Props) {
   const [moleInfos, setMoleInfos] = useState<string>("");
   const [localNotes, setLocalNotes] = useState<Note[]>([]);
 
-  const openModal = (diag: Diagnostic, diagIndex: number) => {
+  const openModal = (
+    diag: Diagnostic,
+    diagIndex: number,
+    fullscreen?: boolean
+  ) => {
     setSelectedDiag({ diag, diagIndex });
     setLocalNotes(patient.diagnostic[diagIndex]?.annotations ?? []);
   };
@@ -57,11 +61,10 @@ function PatientFileScreen({ route, navigation }: Props) {
     setLocalNotes([]);
   };
 
-  const handleValider = () => {
+  const handleValidate = (notes: Note[]) => {
     if (selectedDiag) {
-      saveNotes(patient.id, selectedDiag.diagIndex, localNotes);
+      saveNotes(patient.id, selectedDiag.diagIndex, notes);
     }
-    closeModal();
   };
 
   return (
@@ -108,7 +111,7 @@ function PatientFileScreen({ route, navigation }: Props) {
         localNotes={localNotes}
         setLocalNotes={setLocalNotes}
         onClose={closeModal}
-        onValider={handleValider}
+        onValidate={handleValidate}
       />
     </ScrollView>
   );
@@ -116,13 +119,13 @@ function PatientFileScreen({ route, navigation }: Props) {
 
 const styles = StyleSheet.create({
   patientName: {
-    fontSize: FontSize.lg,
+    fontSize: FontSize.xl,
     fontWeight: "bold",
     color: Colors.textPrimary,
     marginBottom: Spacing.xxl,
   },
   diagnosticsTitle: {
-    fontSize: FontSize.lg,
+    fontSize: FontSize.xl,
     fontWeight: "bold",
     color: Colors.textPrimary,
     marginBottom: Spacing.lg,

@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   screenTitle: {
-    fontSize: FontSize.lg,
+    fontSize: FontSize.xl,
     fontWeight: "bold",
     margin: Spacing.md,
     color: Colors.textPrimary,

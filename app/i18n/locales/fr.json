@@ -21,7 +21,7 @@
     "zone": "ZONE",
     "evolution": "EVOLUTION",
     "risk": "RISQUE",
-    "note": "Note :",
+    "notes": "Notes :",
     "noNote": "Aucune note."
   },
   "modal": {

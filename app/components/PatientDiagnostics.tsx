@@ -18,7 +18,7 @@ import Separator from "./Separator";
 interface PatientDiagnosticsProps {
   diag: Diagnostic;
   index: number;
-  openModal: (diag: Diagnostic, diagIndex: number) => void;
+  openModal: (diag: Diagnostic, diagIndex: number, fullscreen?: boolean) => void;
   annotations: Note[];
 }
 
@@ -70,7 +70,7 @@ function PatientDiagnostics({
               style={styles.conditionPicture}
             />
             <TouchableOpacity
-              onPress={() => openModal(diag, index)}
+              onPress={() => openModal(diag, index, true)}
               activeOpacity={0.8}
               style={styles.maximizeButton}
             >
@@ -107,12 +107,15 @@ function PatientDiagnostics({
               </View>
             </View>
             <Separator color={Colors.borderAlt} />
+            <Text style={styles.noteText}>{t('diagnostics.notes')}</Text>
             {annotations.length > 0 ? (
-              <Text style={styles.noteText}>
-                <Text style={styles.textFont}>
-                  {t('diagnostics.note')} {annotations[0]?.text}
-                </Text>
-              </Text>
+              annotations?.map(annotation => {
+                return (
+                  <Text style={styles.noteText} key={annotation.id}>
+                    {annotation?.text}
+                  </Text>
+                )
+              })
             ) : (
               <Text style={styles.noNoteText}>{t('diagnostics.noNote')}</Text>
             )}
@@ -211,12 +214,13 @@ const styles = StyleSheet.create({
   labels: {
     color: Colors.textLabel,
   },
-  textFont: {
-    fontWeight: "600",
-  },
   noteText: {
     color: Colors.textSecondary,
     fontSize: 14,
+    fontWeight: "600",
+  },
+  textFont: {
+    fontWeight: "600",
   },
   noNoteText: {
     color: Colors.textDisabled,
